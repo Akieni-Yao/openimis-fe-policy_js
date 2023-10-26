@@ -255,36 +255,37 @@ class FamilyOrInsureePoliciesSummary extends PagedDataHandler {
     if (this.showBalance) {
       f.push((i) => i.balance);
     }
-    f.push((i) =>
-      !this.props.readOnly && this.canRenew(i)
-        ? withTooltip(
-            <IconButton onClick={(e) => this.renewPolicy(i)}>
-              <RenewIcon />
-            </IconButton>,
-            formatMessage(this.props.intl, "policy", "action.RenewPolicy.tooltip")
-          )
-        : null
-    );
-    f.push((i) =>
-      !this.props.readOnly && this.canSuspend(i)
-        ? withTooltip(
-            <IconButton onClick={(e) => this.confirmSuspend(i)}>
-              <SuspendIcon />
-            </IconButton>,
-            formatMessage(this.props.intl, "policy", "action.SuspendPolicy.tooltip")
-          )
-        : null
-    );
-    f.push((i) =>
-      !this.props.readOnly && this.canDelete(i)
-        ? withTooltip(
-            <IconButton onClick={(e) => this.confirmDelete(i)}>
-              <DeleteIcon />
-            </IconButton>,
-            formatMessage(this.props.intl, "policy", "action.DeletePolicy.tooltip")
-          )
-        : null
-    );
+    //icon comment by Client suggestion.
+    // f.push((i) =>
+    //   !this.props.readOnly && this.canRenew(i)
+    //     ? withTooltip(
+    //         <IconButton onClick={(e) => this.renewPolicy(i)}>
+    //           <RenewIcon />
+    //         </IconButton>,
+    //         formatMessage(this.props.intl, "policy", "action.RenewPolicy.tooltip")
+    //       )
+    //     : null
+    // );
+    // f.push((i) =>
+    //   !this.props.readOnly && this.canSuspend(i)
+    //     ? withTooltip(
+    //         <IconButton onClick={(e) => this.confirmSuspend(i)}>
+    //           <SuspendIcon />
+    //         </IconButton>,
+    //         formatMessage(this.props.intl, "policy", "action.SuspendPolicy.tooltip")
+    //       )
+    //     : null
+    // );
+    // f.push((i) =>
+    //   !this.props.readOnly && this.canDelete(i)
+    //     ? withTooltip(
+    //         <IconButton onClick={(e) => this.confirmDelete(i)}>
+    //           <DeleteIcon />
+    //         </IconButton>,
+    //         formatMessage(this.props.intl, "policy", "action.DeletePolicy.tooltip")
+    //       )
+    //     : null
+    // );
     return f;
   };
 

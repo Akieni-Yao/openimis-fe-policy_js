@@ -160,48 +160,49 @@ class PolicyMasterPanel extends FormPanel {
     } = this.props;
 
     let actions = [];
-    if (this.canRenew(edited)) {
-      actions.push({
-        button: (
-          <IconButton onClick={(e) => this.renewPolicy()}>
-            <RenewIcon />
-          </IconButton>
-        ),
-        tooltip: formatMessage(
-          this.props.intl,
-          "policy",
-          "action.RenewPolicy.tooltip"
-        ),
-      });
-    }
-    if (this.canSuspend(edited)) {
-      actions.push({
-        button: (
-          <IconButton onClick={(e) => this.confirmSuspend()}>
-            <SuspendIcon />
-          </IconButton>
-        ),
-        tooltip: formatMessage(
-          this.props.intl,
-          "policy",
-          "action.SuspendPolicy.tooltip"
-        ),
-      });
-    }
-    if (this.canDelete(edited)) {
-      actions.push({
-        button: (
-          <IconButton onClick={(e) => this.confirmDelete()}>
-            <DeleteIcon />
-          </IconButton>
-        ),
-        tooltip: formatMessage(
-          this.props.intl,
-          "policy",
-          "action.DeletePolicy.tooltip"
-        ),
-      });
-    }
+    // Icon comment by client Suggestion
+    // if (this.canRenew(edited)) {
+    //   actions.push({
+    //     button: (
+    //       <IconButton onClick={(e) => this.renewPolicy()}>
+    //         <RenewIcon />
+    //       </IconButton>
+    //     ),
+    //     tooltip: formatMessage(
+    //       this.props.intl,
+    //       "policy",
+    //       "action.RenewPolicy.tooltip"
+    //     ),
+    //   });
+    // }
+    // if (this.canSuspend(edited)) {
+    //   actions.push({
+    //     button: (
+    //       <IconButton onClick={(e) => this.confirmSuspend()}>
+    //         <SuspendIcon />
+    //       </IconButton>
+    //     ),
+    //     tooltip: formatMessage(
+    //       this.props.intl,
+    //       "policy",
+    //       "action.SuspendPolicy.tooltip"
+    //     ),
+    //   });
+    // }
+    // if (this.canDelete(edited)) {
+    //   actions.push({
+    //     button: (
+    //       <IconButton onClick={(e) => this.confirmDelete()}>
+    //         <DeleteIcon />
+    //       </IconButton>
+    //     ),
+    //     tooltip: formatMessage(
+    //       this.props.intl,
+    //       "policy",
+    //       "action.DeletePolicy.tooltip"
+    //     ),
+    //   });
+    // }
 
     return (
       <Grid container>

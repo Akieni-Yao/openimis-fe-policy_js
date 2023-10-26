@@ -194,21 +194,21 @@ class PolicySearcher extends Component {
                     <IconButton onClick={e => !policy.clientMutationId && this.props.onDoubleClick(policy, true)}><TabIcon /></IconButton >
                 </Tooltip>
             ),
-            policy => this.canRenew(policy) && (
-                <Tooltip title={formatMessage(this.props.intl, "policy", "action.RenewPolicy.tooltip")}>
-                    <IconButton onClick={e => !policy.clientMutationId && this.renewPolicy(policy)}><RenewIcon /></IconButton >
-                </Tooltip>
-            ),
-            policy => this.canSuspend(policy) && (
-                <Tooltip title={formatMessage(this.props.intl, "policy", "action.SuspendPolicy.tooltip")}>
-                    <IconButton onClick={e => !policy.clientMutationId && this.confirmSuspend(policy)}><SuspendIcon /></IconButton >
-                </Tooltip>
-            ),
-            policy => this.canDelete(policy) && (
-                <Tooltip title={formatMessage(this.props.intl, "policy", "action.DeletePolicy.tooltip")}>
-                    <IconButton onClick={e => !policy.clientMutationId && this.confirmDelete(policy)}><DeleteIcon /></IconButton >
-                </Tooltip>
-            )
+            // policy => this.canRenew(policy) && (
+            //     <Tooltip title={formatMessage(this.props.intl, "policy", "action.RenewPolicy.tooltip")}>
+            //         <IconButton onClick={e => !policy.clientMutationId && this.renewPolicy(policy)}><RenewIcon /></IconButton >
+            //     </Tooltip>
+            // ),
+            // policy => this.canSuspend(policy) && (
+            //     <Tooltip title={formatMessage(this.props.intl, "policy", "action.SuspendPolicy.tooltip")}>
+            //         <IconButton onClick={e => !policy.clientMutationId && this.confirmSuspend(policy)}><SuspendIcon /></IconButton >
+            //     </Tooltip>
+            // ),
+            // policy => this.canDelete(policy) && (
+            //     <Tooltip title={formatMessage(this.props.intl, "policy", "action.DeletePolicy.tooltip")}>
+            //         <IconButton onClick={e => !policy.clientMutationId && this.confirmDelete(policy)}><DeleteIcon /></IconButton >
+            //     </Tooltip>
+            // )
         ];
         return formatters;
     }
