@@ -14,6 +14,7 @@
   "policy.policies.status.2": "Active",
   "policy.policies.status.4": "Suspended",
   "policy.policies.status.8": "Expired",
+  "policy.policies.status.16": "Ready",
   "policy.policies.deduction": "Deduction",
   "policy.policies.hospitalDeduction": "Hospital Deduction",
   "policy.policies.nonHospitalDeduction": "Non Hospital Deduction",
