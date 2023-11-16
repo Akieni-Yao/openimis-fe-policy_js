@@ -19,42 +19,68 @@ const ROUTE_POLICY_POLICIES = "policy/policies";
 const ROUTE_POLICY_POLICY = "policy/policy";
 
 const DEFAULT_CONFIG = {
-  "translations": [{ key: 'en', messages: messages_en }],
-  "reducers": [{ key: 'policy', reducer }],
-  "refs": [
+  translations: [{ key: "en", messages: messages_en }],
+  reducers: [{ key: "policy", reducer }],
+  refs: [
     { key: "policy.PolicyOfficerPicker", ref: PolicyOfficerPicker },
-    { key: "policy.PolicyOfficerPicker.projection", ref: ["id", "uuid", "code", "lastName", "otherNames"] },
-    { key: "policy.PolicyPicker.projection", ref: ["id", "uuid", "startDate", "product{name, code}", "expiryDate", "value"] },
-    { key: "policy.PolicyOfficerPicker.sort", ref: 'officer__code' },
+    {
+      key: "policy.PolicyOfficerPicker.projection",
+      ref: ["id", "uuid", "code", "lastName", "otherNames"],
+    },
+    {
+      key: "policy.PolicyPicker.projection",
+      ref: [
+        "id",
+        "uuid",
+        "startDate",
+        "product{name, code}",
+        "expiryDate",
+        "value",
+      ],
+    },
+    { key: "policy.PolicyOfficerPicker.sort", ref: "officer__code" },
     { key: "policy.PolicyStatusPicker", ref: PolicyStatusPicker },
     { key: "policy.PolicyStatusPicker.projection", ref: null },
     { key: "policy.PolicyStagePicker", ref: PolicyStagePicker },
     { key: "policy.PolicyStagePicker.projection", ref: null },
-    { key: "policy.FamilyOrInsureePoliciesSummary", ref: FamilyOrInsureePoliciesSummary },
+    {
+      key: "policy.FamilyOrInsureePoliciesSummary",
+      ref: FamilyOrInsureePoliciesSummary,
+    },
     { key: "policy.InsureeEligibilitySummary", ref: InsureeEligibilitySummary },
     { key: "policy.InsureeEligibilityEnquiry", ref: InsureeEligibilityEnquiry },
-    { key: "policy.InsureePolicyEligibilitySummary", ref: InsureePolicyEligibilitySummary },
+    {
+      key: "policy.InsureePolicyEligibilitySummary",
+      ref: InsureePolicyEligibilitySummary,
+    },
     { key: "policy.route.policies", ref: ROUTE_POLICY_POLICIES },
     { key: "policy.route.policy", ref: ROUTE_POLICY_POLICY },
   ],
   "core.Router": [
     { path: ROUTE_POLICY_POLICIES, component: PoliciesPage },
-    { path: ROUTE_POLICY_POLICY + "/:policy_uuid?/:family_uuid?/:renew?", component: PolicyPage },
-  ],
-  "policy.Policy.panels": [PolicyValuesPanel],
-  "insuree.MainMenu": [
     {
-      text: <FormattedMessage module="policy" id="menu.policies" />,
-      icon: <ListAlt />,
-      route: "/" + ROUTE_POLICY_POLICIES,
-      filter: rights => rights.includes(RIGHT_POLICY)
+      path: ROUTE_POLICY_POLICY + "/:policy_uuid?/:family_uuid?/:renew?",
+      component: PolicyPage,
     },
   ],
-  "insuree.EnquiryDialog": [FamilyOrInsureePoliciesSummary, InsureeEligibilityEnquiry, InsureeEligibilitySummary],
-  "insuree.FamilyOverview.panels": [FamilyOrInsureePoliciesSummary],  
-  "insuree.FamilyOverview.mutations": [policyMutation]
-}
+  "policy.Policy.panels": [PolicyValuesPanel],
+  // "insuree.MainMenu": [
+  //   {
+  //     text: <FormattedMessage module="policy" id="menu.policies" />,
+  //     icon: <ListAlt />,
+  //     route: "/" + ROUTE_POLICY_POLICIES,
+  //     filter: rights => rights.includes(RIGHT_POLICY)
+  //   },
+  // ],
+  "insuree.EnquiryDialog": [
+    FamilyOrInsureePoliciesSummary,
+    InsureeEligibilityEnquiry,
+    InsureeEligibilitySummary,
+  ],
+  "insuree.FamilyOverview.panels": [FamilyOrInsureePoliciesSummary],
+  "insuree.FamilyOverview.mutations": [policyMutation],
+};
 
 export const PolicyModule = (cfg) => {
   return { ...DEFAULT_CONFIG, ...cfg };
-}
+};
